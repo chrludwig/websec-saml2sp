@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Anonymous User Page</title>
+</head>
+<body>
+<h1>Anonymous User Page</h1>
+
+<p>The current time is ${time}.</p>
+
+<p>This page is only available to <em>anonymous</em> users.</p>
+
+<p>In Spring Security's default implementation and configuration it is equivalent to say
+    the authentication token in the security context must be an instance of
+    <a target="_blank"
+       href="http://docs.spring.io/spring-security/site/docs/3.2.7
+       .RELEASE/apidocs/org/springframework/security/authentication/AnonymousAuthenticationToken
+       .html">AnonymousAuthenticationToken</a>.
+</p>
+    #parse("snippets/pageListSnippet.vm")
+</body>
+</html>

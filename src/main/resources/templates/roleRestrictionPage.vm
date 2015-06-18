@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Anonymous User Page</title>
+</head>
+<body>
+<h1>${requiredRoleId} Role Page</h1>
+
+<p>The current time is ${time}.</p>
+
+<p>This page is only available to authenticated users who have the "authority" ${requiredRoleId}.</p>
+    #parse("snippets/pageListSnippet.vm")
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Already Logged In</title>
+</head>
+<body>
+<h1>WebSec SAML2 Service Provider - Already Logged In</h1>
+
+<p>You are already logged in as "${currentUser.userName}"!</p>
+
+<p>The current time is ${time}.</p>
+    #parse("snippets/pageListSnippet.vm")
+</body>
+</html>

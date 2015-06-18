@@ -1,0 +1,22 @@
+<p>Pages in this Web application:</p>
+<ul>
+    <li>
+        <a href="${startPageUrl}">start page</a> (no access restrictions)
+    </li>
+    <li>
+        <a href="${anonymousPageUrl}">anoymous user page</a>
+        (access restricted to anonymous users)
+    </li>
+    <li>
+        <a href="${authenticatedPageUrl}">authenticated user page</a>
+        (access restricted to logged in users)
+    </li>
+    <li>
+        <a href="${userRolePageUrl}">user role page</a>
+        (access restricted to authenticated users who have the USER role)
+    </li>
+    <li>
+        <a href="${adminRolePageUrl}">admin role page</a>
+        (access restricted to authenticated users who have the ADMIN role)
+    </li>
+</ul>

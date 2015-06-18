@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Anonymous User Page</title>
+</head>
+<body>
+<h1>Authenticated User Page</h1>
+
+<p>The current time is ${time}.</p>
+
+<p>This page is only available to <em>logged in</em> users.</p>
+
+<p>In Spring Security's default implementation and configuration it is equivalent to say
+    the current user must not be anonymous. The authenticateion "level" - i.e.,
+    authentication by "remember me" feature, entry of username and password, or
+    even multi-factor authentication - does not matter.</p>
+    #parse("snippets/pageListSnippet.vm")
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Start Page</title>
+</head>
+<body>
+<h1>WebSec SAML2 Service Provider Start Page</h1>
+
+<p>The current time is ${time}.</p>
+    #parse("snippets/pageListSnippet.vm")
+<form action="${loginUrl}" method="get">
+    <p>You are not logged in.</p>
+    <button type="submit">Log in</button>
+</form>
+</body>
+</html>

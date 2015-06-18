@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Select you IdP!</title>
+</head>
+<body>
+<h1>WebSec SAML2 Service Provider - Select your IdP:</h1>
+
+<form action="${idpDiscoReturnURL}" method="get">
+    <div>
+        #foreach( $idp in $idps )
+            #if (${velocityCount} == 1)
+                <input type="radio" name="${idpDiscoReturnParam}" id="idp_${idp}" value="${idp}" checked>
+            #else
+                <input type="radio" name="${idpDiscoReturnParam}" id="idp_${idp}" value="${idp}">
+            #end
+            <label for="idp_${idp}">${idp}</label>
+        #end
+    </div>
+    <p><input type="submit" value="Login"/></p>
+</form>
+
+<p>Of course, IDP selection could be skipped if there is only one configured IDP.</p>
+</body>
+</html>

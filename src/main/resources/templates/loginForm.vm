@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>WebSec SAML2 Service Provider Login Form</title>
+</head>
+<body>
+<h1>WebSec SAML2 Service Provider Login Form</h1>
+    #if ( !$currentUser.anonymous )
+    <p>You are already logged in as "${currentUser}"!</p>
+    #else
+    <form action="${loginUrl}" method="post">
+        #if ( $errorArg )
+            <p>Invalid username or password.</p>
+        #end
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"/>
+        </p>
+
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"/>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+    #end
+<form action="${startPageUrl}" method="get">
+    <button type="submit">Cancel - back to start page</button>
+</form>
+</body>
+</html>
