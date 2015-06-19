@@ -29,6 +29,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * service that converts the credentials returned by an IdP after a successful SAML 2.0 Web SSO into
+ * a {@link SamlUserDetails} object.
+ */
 @Service("samlUserDetailsService")
 public class SAMLUserDetailsServiceImpl implements SAMLUserDetailsService {
 

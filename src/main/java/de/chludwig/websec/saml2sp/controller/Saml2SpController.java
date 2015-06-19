@@ -28,7 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Date;
 
 /**
- * TODO; add documentation
+ * MVC controller that implements the (rudimentary) business logic for saml2sp's "regular" pages.
  */
 @Controller
 public class Saml2SpController {

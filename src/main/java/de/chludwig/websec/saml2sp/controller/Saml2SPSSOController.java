@@ -40,6 +40,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * MVC controller that implements the business logic for saml2sp's IDP selection page.
+ * <p/>
+ * All other Web SSO related URLs are implicitly handled by the Spring Security SAML Extension.
+ */
 @Controller
 @RequestMapping("/saml")
 public class Saml2SPSSOController {
@@ -90,10 +95,9 @@ public class Saml2SPSSOController {
         return idps;
     }
 
-    /*
+    /**
      * Checks if an HTTP request is forwarded from servlet.
      */
-
     private boolean isForwarded(HttpServletRequest request) {
         return request.getAttribute("javax.servlet.forward.request_uri") != null;
     }

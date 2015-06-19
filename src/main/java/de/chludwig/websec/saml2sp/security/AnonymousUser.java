@@ -20,7 +20,10 @@ import java.util.Collections;
 import java.util.UUID;
 
 /**
- * TODO; add documentation
+ * {@link ApplicationUser} specialization that represents an anonymous user.
+ *
+ * All instances of {@link AnonymousUser} share the same {@link #getUserId() user id}; therefore, any two
+ * anonymous user objects compare {@link #equals(Object) equal}.
  */
 public class AnonymousUser extends ApplicationUser {
 

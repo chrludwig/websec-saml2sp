@@ -26,7 +26,11 @@ import static de.chludwig.websec.saml2sp.security.AuthenticationStatus.ANONYMOUS
 import static org.apache.commons.lang3.StringUtils.defaultString;
 
 /**
- * TODO; add documentation
+ * Application-specific representation of a user.
+ *
+ * In partiular, {@link ApplicationUser} stores the{@link #getUserId() user id}, the user's
+ * {@link #getRoles() roles}, as well as the user's {@link AuthenticationStatus authentication status} without
+ * direct dependency on any Spring class.
  */
 public abstract class ApplicationUser {
 

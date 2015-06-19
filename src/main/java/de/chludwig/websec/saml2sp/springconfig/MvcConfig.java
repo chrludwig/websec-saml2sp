@@ -27,17 +27,35 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import java.util.List;
 
+/**
+ * Adaption of Spring Boot's default MVC configuration.
+ */
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     CurrentUserHandlerMethodArgumentResolver currentUserHandlerMethodArgumentResolver;
 
+    /**
+     * Register the resolver for the {@link de.chludwig.websec.saml2sp.stereotypes.CurrentUser @CurrentUser}
+     * handler method argument annotation.
+     *
+     * @param argumentResolvers
+     *         the resolver collection the current user resolver is added to
+     */
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(currentUserHandlerMethodArgumentResolver);
     }
 
+    /**
+     * Servlet context initializer that sets a custom session cookie name.
+     *
+     * Otherwise, saml2sp and WSO2's Identity Server overwrite each other's session cookie if they are
+     * both serving localhost (on different ports). This breaks the SSO flow.
+     *
+     * @return a context initializer that sets the session cookie name to {@code "SAML2SPSESSIONID"}.
+     */
     @Bean
     public ServletContextInitializer servletContextInitializer() {
         return new ServletContextInitializer() {

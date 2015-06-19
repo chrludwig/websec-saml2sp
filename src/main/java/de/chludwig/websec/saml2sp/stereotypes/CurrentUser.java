@@ -18,6 +18,13 @@ package de.chludwig.websec.saml2sp.stereotypes;
 
 import java.lang.annotation.*;
 
+/**
+ * Handler method parameter annotation that makes the request handler bind the current
+ * {@link de.chludwig.websec.saml2sp.security.ApplicationUser user} to the argument.
+ * <p/>
+ * The implementation is provided by
+ * {@link de.chludwig.websec.saml2sp.springconfig.CurrentUserHandlerMethodArgumentResolver}.
+ */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

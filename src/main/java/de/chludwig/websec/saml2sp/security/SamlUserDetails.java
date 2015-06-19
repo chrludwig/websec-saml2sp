@@ -16,6 +16,7 @@
 
 package de.chludwig.websec.saml2sp.security;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.saml.SAMLCredential;
@@ -23,7 +24,8 @@ import org.springframework.security.saml.SAMLCredential;
 import java.util.Collection;
 
 /**
- * TODO; add documentation
+ * User details {@link Authentication#getDetails() attached} to a Spring Security {@link Authentication} if the
+ * user was authenticated by a SAML 2.0 Web Single Sign On IdP.
  */
 public class SamlUserDetails implements UserDetails {
     private final String username;
@@ -40,6 +42,8 @@ public class SamlUserDetails implements UserDetails {
 
     /**
      * Returns the authorities granted to the user. Cannot return <code>null</code>.
+     * <p/>
+     * If the IdP did not provide any relevant role information, then the authority of the USER role is granted.
      *
      * @return the authorities, sorted by natural key (never <code>null</code>)
      */
@@ -51,7 +55,7 @@ public class SamlUserDetails implements UserDetails {
     /**
      * Returns the password used to authenticate the user.
      *
-     * @return the password
+     * @return always an empty string
      */
     @Override
     public String getPassword() {

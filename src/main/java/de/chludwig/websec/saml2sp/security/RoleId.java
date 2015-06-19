@@ -20,7 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO; add documentation
+ * Enumeration of the identifiers of all known roles in this application.
+ *
+ * Of course, in a production-grade application the roles and their permissions would be kept configurable.
  */
 public enum RoleId {
     ANONYMOUS_ROLE_ID("ANONYMOUS"),

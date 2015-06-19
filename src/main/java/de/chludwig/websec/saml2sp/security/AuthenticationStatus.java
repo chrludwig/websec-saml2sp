@@ -17,7 +17,7 @@
 package de.chludwig.websec.saml2sp.security;
 
 /**
- * TODO; add documentation
+ * Representation of various levels of authentication.
  */
 public enum AuthenticationStatus {
 

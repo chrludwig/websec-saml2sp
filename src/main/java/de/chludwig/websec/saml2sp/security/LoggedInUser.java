@@ -19,7 +19,10 @@ package de.chludwig.websec.saml2sp.security;
 import java.util.Set;
 
 /**
- * TODO; add documentation
+ * Application-specific representation of a logged in user.
+ *
+ * In particular, the {@link #getAuthenticationStatus() authentication status} of a
+ * {@link LoggedInUser logged in user} will never be {@link AuthenticationStatus#ANONYMOUS ANONYMOUS}.
  */
 public class LoggedInUser extends ApplicationUser {
 

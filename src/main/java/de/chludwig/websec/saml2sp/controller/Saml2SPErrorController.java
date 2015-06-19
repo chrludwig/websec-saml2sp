@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * TODO; add documentation
+ * MVC controller that implements the business logic for saml2sp's error page.
  */
 @Controller
 public class Saml2SPErrorController implements ErrorController {
@@ -47,7 +47,6 @@ public class Saml2SPErrorController implements ErrorController {
     @RequestMapping(ERROR_PAGE_PATH)
     public ModelAndView errorPage(HttpServletRequest request, HttpServletResponse response,
                                   @CurrentUser ApplicationUser currentUser) {
-
         ModelAndView modelAndView = Saml2SpController.createModelAndView("error", currentUser);
         modelAndView.addObject("forwardedFrom", request.getAttribute("javax.servlet.forward.request_uri"));
         modelAndView.addObject("statusCode", response.getStatus());
