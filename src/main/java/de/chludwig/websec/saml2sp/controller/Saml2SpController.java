@@ -36,7 +36,8 @@ public class Saml2SpController {
 
     public static final String START_PAGE_PATH = "/";
     public static final String ANONYMOUS_PAGE_PATH = "/anonymous";
-    public static final String PW_LOGIN_PAGE_PATH = "/login";
+    public static final String PW_LOGIN_PAGE_PATH = "/pwlogin";
+    public static final String PW_LOGOUT_PAGE_PATH = "/pwlogout";
     public static final String LOGIN_ERROR_PARAM = "error";
     public static final String AUTHENTICATION_FAILURE_URL = PW_LOGIN_PAGE_PATH + "?" + LOGIN_ERROR_PARAM;
     public static final String AUTHENTICATED_PAGE_PATH = "/authenticated";
@@ -106,9 +107,8 @@ public class Saml2SpController {
 
     public static void addUrlModelAttributes(ModelAndView modelAndView) {
         modelAndView.addObject("startPageUrl", START_PAGE_PATH);
-        modelAndView.addObject("loginUrl", Saml2SPSSOController.SAML_LOGIN_PAGE_PATH);
-        modelAndView.addObject("globalLogoutUrl", Saml2SPSSOController.SAML_GLOBAL_LOGOUT_URL_PATH);
-        modelAndView.addObject("localLogoutUrl", Saml2SPSSOController.SAML_LOCAL_LOGOUT_URL_PATH);
+        modelAndView.addObject("loginUrl", PW_LOGIN_PAGE_PATH);
+        modelAndView.addObject("logoutUrl", PW_LOGOUT_PAGE_PATH);
         modelAndView.addObject("anonymousPageUrl", ANONYMOUS_PAGE_PATH);
         modelAndView.addObject("authenticatedPageUrl", AUTHENTICATED_PAGE_PATH);
         modelAndView.addObject("userRolePageUrl", USER_ROLE_PAGE_PATH);

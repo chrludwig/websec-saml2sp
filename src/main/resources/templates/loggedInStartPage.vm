@@ -12,11 +12,8 @@
     #parse("snippets/pageListSnippet.vm")
 <p>Current User: ${currentUser}</p>
 
-<form action="${globalLogoutUrl}" method="post">
-    <button type="submit">Log out globally</button>
-</form>
-<form action="${localLogoutUrl}" method="post">
-    <button type="submit">Log out locally</button>
+<form action="${logoutUrl}" method="post">
+    <button type="submit">Log out</button>
 </form>
 </body>
 </html>
