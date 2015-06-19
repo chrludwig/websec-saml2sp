@@ -489,11 +489,14 @@ public class SamlSpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(samlFilter(), BasicAuthenticationFilter.class);
         http.authorizeRequests()
                 .antMatchers(PW_LOGIN_PAGE_PATH).denyAll() // don't offer local login form in SAML SSO scenario
-                .antMatchers(START_PAGE_PATH).permitAll().antMatchers(ERROR_PAGE_PATH).permitAll()
-                .antMatchers("/saml/**").permitAll().antMatchers(AUTHENTICATED_PAGE_PATH).authenticated()
-                .antMatchers(ANONYMOUS_PAGE_PATH).anonymous().antMatchers(USER_ROLE_PAGE_PATH)
-                .hasAuthority(RoleId.USER_ROLE_ID.getId()).antMatchers(ADMIN_ROLE_PAGE_PATH)
-                .hasAuthority(RoleId.ADMIN_ROLE_ID.getId()).anyRequest().authenticated();
+                .antMatchers(START_PAGE_PATH).permitAll() //
+                .antMatchers(ERROR_PAGE_PATH).permitAll() //
+                .antMatchers("/saml/**").permitAll() //
+                .antMatchers(AUTHENTICATED_PAGE_PATH).authenticated() //
+                .antMatchers(ANONYMOUS_PAGE_PATH).anonymous() //
+                .antMatchers(USER_ROLE_PAGE_PATH).hasAuthority(RoleId.USER_ROLE_ID.getId()) //
+                .antMatchers(ADMIN_ROLE_PAGE_PATH).hasAuthority(RoleId.ADMIN_ROLE_ID.getId()) //
+                .anyRequest().authenticated();
         http.logout().logoutSuccessUrl("/");
     }
 
