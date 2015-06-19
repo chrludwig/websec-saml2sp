@@ -15,9 +15,7 @@
 <p>In Spring Security's default implementation and configuration it is equivalent to say
     the authentication token in the security context must be an instance of
     <a target="_blank"
-       href="http://docs.spring.io/spring-security/site/docs/3.2.7
-       .RELEASE/apidocs/org/springframework/security/authentication/AnonymousAuthenticationToken
-       .html">AnonymousAuthenticationToken</a>.
+       href="http://docs.spring.io/spring-security/site/docs/3.2.7.RELEASE/apidocs/org/springframework/security/authentication/AnonymousAuthenticationToken.html">AnonymousAuthenticationToken</a>.
 </p>
     #parse("snippets/pageListSnippet.vm")
 </body>
