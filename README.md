@@ -7,7 +7,7 @@ profile. It builds on Vincenzo De Notaris's Spring Boost-based Spring Security S
 
 ## Functional changes
 * Besides SSOCircle, **saml2sp** supports a locally running
-[WSO2 Identity Server](http://wso2.com/products/identity-server/) (Version 5.0.0) as an alternative IdP.
+[WSO2 Identity Server](http://wso2.com/products/identity-server/) (Version 5.1.0) as an alternative IdP.
 * Role information in the SAML credential attributes is used to determine the Spring Security
 [_authorities_](http://docs.spring.io/spring-security/site/docs/3.2.7.RELEASE/apidocs/org/springframework/security/core/Authentication.html#getAuthorities())
 (or roles) of the logged in user. (If there are no supported roles in the the SAML credential, then the _USER_ role is
@@ -21,18 +21,18 @@ assumed by default.)
 
 ## Build
 
-The build of **saml2sp** requires [Maven 3.x](https://maven.apache.org/download.cgi) and
-[Oracle JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
-(To be precise, **saml2sp** can probably be built with Java 8 and / or OpenJDK as well. But version 5.0.0 of
-WSO2's Identity Manager still requires Oracle's Java 7 implementation.)
+The build of **saml2sp** requires
+[Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+(To be precise, **saml2sp** can probably be built with any Java >= 7, including OpenJDK. But
+WSO2's Identity Manager still requires Oracle's Java implementation.)
 
-For building **saml2sp**, you only need to call `mvn clean install` in the project's top level directory.
-This will produce an executable JAR file in the target directory.
+For building **saml2sp**, you only need to call `./mvnw clean install` in the project's top level
+directory. This will produce an executable JAR file in the target directory.
 
 ## Running
 
 The Web application is deployed in an embedded Tomcat inside the JAR file. When you start it by calling
 ```
-java -jar saml2sp-0.0.1-SNAPSHOT.jar
+java -jar saml2sp-0.0.2-localInMemoryAuth-SNAPSHOT.jar
 ```
 then the embedded Tomcat will serve the application at http://localhost:8080/ .
