@@ -7,7 +7,7 @@ profile. It builds on Vincenzo De Notaris's Spring Boost-based Spring Security S
 
 ## Functional changes
 * Besides SSOCircle, **saml2sp** supports a locally running
-[WSO2 Identity Server](http://wso2.com/products/identity-server/) (Version 5.1.0) as an alternative IdP.
+[WSO2 Identity Server](http://wso2.com/products/identity-server/) (Version >= 5.1.0) as an alternative IdP.
 * Role information in the SAML credential attributes is used to determine the Spring Security
 [_authorities_](http://docs.spring.io/spring-security/site/docs/3.2.7.RELEASE/apidocs/org/springframework/security/core/Authentication.html#getAuthorities())
 (or roles) of the logged in user. (If there are no supported roles in the the SAML credential, then the _USER_ role is
